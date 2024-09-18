@@ -3,35 +3,70 @@
     margin: 0;
     padding: 0;
 }
+
 html,
 body {
     font-family: Rubik, sans-serif;
     font-style: normal;
 }
+
 a {
     text-decoration: none;
 }
+
+a:hover {
+    text-decoration: underline;
+}
+
 ul {
     list-style: none;
 }
+
 button {
     border: none;
     background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s;
 }
+
+.button:hover {
+    transform: translateY(-5px);
+}
+
 .header {
     padding: 14px 0;
     background: rgba(10, 97, 247, 1);
 }
-/* .logo {
-    margin-left: 130px;
+
+.container {
+    height: 100%;
+    width: 100%;
+    max-width: 1170px;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid red;
 }
+
+.container-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* .logo {
+    
+}
+
 .logo-img {
 
-}
-.menu {
+} */
 
+.menu {
+    display: flex;
+    gap: 24px;
 }
-.menu-item {
+
+/* .menu-item {
 
 } */
 .menu-link {
@@ -45,6 +80,14 @@ button {
 /* .main {
 
 }  */
+
+.main-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 800px;
+}
+
 .main-title {
     font-size: 58px;
     font-weight: 500;
@@ -52,6 +95,7 @@ button {
     color: rgba(54, 57, 64, 1);
     margin-bottom: 30px;
 }
+
 .text { 
     font-size: 16px;
     font-weight: 400;
@@ -59,6 +103,12 @@ button {
     color: rgba(149, 161, 187, 1);
     margin-bottom: 40px;
 }
+
+.main .text {
+    margin-bottom: 40px;
+    max-width: 380px;
+}
+
 .button {
     width: 152px;
     height: 51px;
@@ -71,16 +121,26 @@ button {
     color: rgba(255, 255, 255, 1);
     background-color: rgba(10, 97, 247, 1);
 }
-/* .main-img {
-    
-} */
+
+.main-img {
+    align-self: flex-end;
+}
+
 .rates-section {
     padding: 100px 0;
     background-color: rgba(249, 250, 252, 1);
 }
+
+.rates-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .rates-section .h2-title {
     margin-bottom: 20px;
 }
+
 .h2-title {
     font-size: 32px;
     font-weight: 500;
@@ -145,12 +205,20 @@ td {
 .create-account-section {
     padding: 100px 0;
 }
+
 .create-account-section .h2-title {
     margin-bottom: 50px;
 }
+
 .create-account-section .text {
     max-width: 500px;
 }
+
+.account-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
 .list-item {
     list-style-image: url(./assets/images/Check.svg);
     font-size: 16px;
@@ -162,11 +230,26 @@ td {
 }
 /* Стилизация формы */
 
+form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fields-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 input, select, fieldset, textarea {
     border: 1px solid rgba(149, 161, 187, 1);
     border-radius: 4px;
     padding: 14px 15px;
 }
+
 input, select, fieldset, textarea, label, legend,
 input::placeholder, textarea::placeholder {
     font-size: 16px;
@@ -175,14 +258,27 @@ input::placeholder, textarea::placeholder {
     color: rgba(149, 161, 187, 1);
     font-family: inherit;
 }
+
 input[type="text"] {
-    width: 100vh;
+    width: 100%;
 }
+
 input[type="email"], input[type="password"],
 input[type="date"], select {
     width: 230px;
     height: 50px;
+    flex-grow: 1;
 }
+
+input[type="radio"], input[type="date"], select {
+    cursor: pointer;
+}
+
+.stack, fieldset {
+    display: flex;
+    column-gap: 30px;
+}
+
 fieldset {
     width: 100%;
     padding: 30px 15px;
@@ -205,20 +301,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: url(./assets/images/Calendar.svg) no-repeat;
 }
 
-
-
-
-.footer {
-    background-color: rgba(10, 97, 247, 1);
-    text-align: center;
-    padding: 20px 0;
-}
-small {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22px;
-    color: rgba(255, 255, 255, 1);
-}
 .custom-checkbox>input {
     position: absolute;
     z-index: -1;
@@ -246,6 +328,7 @@ small {
 /* при наведение на чекбокс */
 .custom-checkbox>input:not(:disabled):not(:checked)+span:hover::before {
     border-color: #b3d7ff;
+    cursor: pointer;
 }
 /* для активного чекбокса */
 .custom-checkbox>input:not(:disabled):active+span::before {
@@ -264,4 +347,16 @@ small {
     border-color: #0b76ef;
     /* background-color: #b3b4b4; */
     background-image: url(./assets/images/mark-for-checkbox.png);
+}
+
+.footer {
+    background-color: rgba(10, 97, 247, 1);
+    text-align: center;
+    padding: 20px 0;
+}
+small {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 1);
 }
